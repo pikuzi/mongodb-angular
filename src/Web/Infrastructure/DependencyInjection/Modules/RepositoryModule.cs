@@ -13,6 +13,7 @@ namespace Web.Infrastructure.DependencyInjection.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterGeneric(typeof(MongoWritableRepository<>)).As(typeof(IWritableRepository<>));
+            builder.RegisterGeneric(typeof(MongoFindableRepository<>)).As(typeof(IFindableRepository<>));
         }
     }
 }

@@ -4,42 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver;
-using MongoDB.Driver.Builders;
 using NUnit.Framework;
-using Web.Data.Extensions;
 using Web.Data.Interface;
 using Web.Domain;
 
 namespace Tests.Intergration.Data
 {
     [TestFixture]
-    public class ProductMongoWritableRepositoryTests
+    public class ProductMongoFindableRepositoryTests
     {
-        private IWritableRepository<Product> _productRepository;
+        private IFindableRepository<Product> _productRepository;
         private MongoDatabase _database;
         private string _collectionName;
         private MongoCollection<Product> _collection;
-            
+
         [SetUp]
         public void SetUp()
         {
-            _productRepository = ContainerSpecification.Resolve<IWritableRepository<Product>>();
+            _productRepository = ContainerSpecification.Resolve<IFindableRepository<Product>>();
             _database = ContainerSpecification.Resolve<MongoDatabase>();
-            _collectionName = typeof (Product).Name.ToLower();
+            _collectionName = typeof(Product).Name.ToLower();
 
             _collection = _database.GetCollection<Product>(_collectionName);
         }
 
         [Test]
-        public void GivenAProductWhenThatProductIsSavedThenThatProductShouldBeRetrivableDirectly()
+        public void GivenAProductWhenFindIsCalledThenTheExpectedProductShouldBeReturned()
         {
             var product = new Product("Test", "A product created during an intergration test", (decimal)19.99);
+            _collection.Save(product);
 
-            _productRepository.Save(product);
+            var persistedProduct = _productRepository.Find(product.Id);
 
-            var persitedProduct = _collection.Get(product.Id);
-
-            Assert.That(persitedProduct.Id, Is.EqualTo(product.Id));
+            Assert.That(persistedProduct.Id, Is.EqualTo(product.Id));
         }
     }
 }

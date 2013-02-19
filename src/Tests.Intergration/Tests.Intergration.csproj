@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainerSpecification.cs" />
+    <Compile Include="Data\ProductMongoFindableRepositoryTests.cs" />
     <Compile Include="Data\ProductMongoWritableRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
