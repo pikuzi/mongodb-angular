@@ -37,8 +37,7 @@ _ReSharper*/
 *.resharper
 [Tt]est[Rr]esult*
 *.log.*
-*.dll
-*.pdb
+bin/
 
 #Subversion files
 .svn

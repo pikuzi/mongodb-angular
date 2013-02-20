@@ -14,5 +14,11 @@ namespace Web.Data.Extensions
             var query = Query.EQ("_id", id);
             return collection.FindOne(query);
         }
+
+        public static void Delete<T>(this MongoCollection<T> collection, Guid id)
+        {
+            var query = Query.EQ("_id", id);
+            collection.Remove(query);
+        }
     }
 }

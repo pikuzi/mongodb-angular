@@ -142,6 +142,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\Concrete\MongoFindableRepository.cs" />
+    <Compile Include="Data\Concrete\MongoQueryableRepository.cs" />
     <Compile Include="Data\Concrete\MongoWritableRepository.cs" />
     <Compile Include="Data\Extensions\MongoCollectionExtensions.cs" />
     <Compile Include="Data\Interface\IFindableRepository.cs" />

@@ -14,6 +14,7 @@ namespace Web.Infrastructure.DependencyInjection.Modules
         {
             builder.RegisterGeneric(typeof(MongoWritableRepository<>)).As(typeof(IWritableRepository<>));
             builder.RegisterGeneric(typeof(MongoFindableRepository<>)).As(typeof(IFindableRepository<>));
+            builder.RegisterGeneric(typeof(MongoQueryableRepository<>)).As(typeof(IQueryableRepository<>));
         }
     }
 }

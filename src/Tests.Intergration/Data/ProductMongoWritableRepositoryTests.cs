@@ -13,7 +13,7 @@ using Web.Domain;
 namespace Tests.Intergration.Data
 {
     [TestFixture]
-    public class ProductMongoWritableRepositoryTests
+    public class ProductMongoWritableRepositoryTests : BaseMongoIntergrationTest
     {
         private IWritableRepository<Product> _productRepository;
         private MongoDatabase _database;
@@ -31,15 +31,25 @@ namespace Tests.Intergration.Data
         }
 
         [Test]
-        public void GivenAProductWhenThatProductIsSavedThenThatProductShouldBeRetrivableDirectly()
+        public void GivenAProductWhenThatProductIsSavedThenThatProductShouldBeRetrivable()
         {
-            var product = new Product("Test", "A product created during an intergration test", (decimal)19.99);
-
+            var product = new Product("Test", "A product created during an intergration test", 19.99);
             _productRepository.Save(product);
-
             var persitedProduct = _collection.Get(product.Id);
 
             Assert.That(persitedProduct.Id, Is.EqualTo(product.Id));
+        }
+
+        [Test]
+        public void GivenAnExistingProductWhenDeleteIsCalledThenThatProductShouldBeNoLongerRetrievable()
+        {
+            var product = new Product("Test", "A product created during an intergration test", 19.99);
+            _collection.Save(product);
+
+            _productRepository.Delete(product);
+            var deletedProduct = _collection.Get(product.Id);
+
+            Assert.That(deletedProduct, Is.Null);
         }
     }
 }

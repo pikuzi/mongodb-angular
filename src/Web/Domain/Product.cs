@@ -9,7 +9,7 @@ namespace Web.Domain
     {
         protected Product() { }
 
-        public Product(string title, string description, decimal cost)
+        public Product(string title, string description, double cost)
         {
             Title = title;
             Description = description;
@@ -18,6 +18,6 @@ namespace Web.Domain
 
         public string Title { get; protected set; }
         public string Description { get; protected set; }
-        public decimal Cost { get; protected set; }
+        public double Cost { get; protected set; }
     }
 }

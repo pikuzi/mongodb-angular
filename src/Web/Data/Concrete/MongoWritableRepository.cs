@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using MongoDB.Driver;
 using Pluralize;
+using Web.Data.Extensions;
 using Web.Data.Interface;
 using Web.Domain;
 
@@ -23,6 +24,11 @@ namespace Web.Data.Concrete
         public void Save(T entity)
         {
             _collection.Save(entity);
+        }
+
+        public void Delete(T entity)
+        {
+            _collection.Delete(entity.Id);
         }
     }
 }

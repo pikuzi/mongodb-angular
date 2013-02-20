@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using NUnit.Framework;
 using Web.Data.Interface;
 using Web.Domain;
@@ -11,7 +6,7 @@ using Web.Domain;
 namespace Tests.Intergration.Data
 {
     [TestFixture]
-    public class ProductMongoFindableRepositoryTests
+    public class ProductMongoFindableRepositoryTests : BaseMongoIntergrationTest
     {
         private IFindableRepository<Product> _productRepository;
         private MongoDatabase _database;
@@ -31,7 +26,7 @@ namespace Tests.Intergration.Data
         [Test]
         public void GivenAProductWhenFindIsCalledThenTheExpectedProductShouldBeReturned()
         {
-            var product = new Product("Test", "A product created during an intergration test", (decimal)19.99);
+            var product = new Product("Test", "A product created during an intergration test", 19.99);
             _collection.Save(product);
 
             var persistedProduct = _productRepository.Find(product.Id);
