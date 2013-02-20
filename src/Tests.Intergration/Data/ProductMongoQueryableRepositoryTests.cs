@@ -27,7 +27,7 @@ namespace Tests.Intergration.Data
         }
 
         [Test]
-        public void GivenThreeProductsWhenTwoOfThoseProductsHaveCostHigherThanTwentyThenQueryingForProductsWithACostHigherThenTwentyShouldReturnTwoOfTheThreeProducts()
+        public void GivenThreeProductsWhenTwoOfThoseProductsHaveCostHigherThanTwentyThenQueryingForProductsWithACostHigherThanTwentyShouldReturnTwoOfTheThreeProducts()
         {
             var productOne = new Product("Test", "A product created during an intergration test", 19.99);
             var productTwo = new Product("Test", "A product created during an intergration test", 100.00);
