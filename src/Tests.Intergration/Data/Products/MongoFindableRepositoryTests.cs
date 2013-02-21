@@ -1,12 +1,12 @@
-﻿using MongoDB.Driver;
+using MongoDB.Driver;
 using NUnit.Framework;
 using Web.Data.Interface;
 using Web.Domain;
 
-namespace Tests.Intergration.Data
+namespace Tests.Intergration.Data.Products
 {
     [TestFixture]
-    public class ProductMongoFindableRepositoryTests : BaseMongoIntergrationTest
+    public class MongoFindableRepositoryTests : BaseMongoIntergrationTest
     {
         private IFindableRepository<Product> _productRepository;
         private MongoDatabase _database;
@@ -16,7 +16,7 @@ namespace Tests.Intergration.Data
         [SetUp]
         public void SetUp()
         {
-            _productRepository = ContainerSpecification.Resolve<IFindableRepository<Product>>();
+            _productRepository = ContainerSpecification.Resolve<IFindableRepository<Web.Domain.Product>>();
             _database = ContainerSpecification.Resolve<MongoDatabase>();
             _collectionName = typeof(Product).Name.ToLower();
 

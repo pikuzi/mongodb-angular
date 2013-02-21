@@ -1,27 +1,24 @@
-﻿using System.Linq;
-using MongoDB.Bson;
+using System.Linq;
 using MongoDB.Driver;
-using MongoDB.Driver.Builders;
-using MongoDB.Driver.Linq;
 using NUnit.Framework;
 using Web.Data.Interface;
 using Web.Domain;
 
-namespace Tests.Intergration.Data
+namespace Tests.Intergration.Data.Products
 {
-    public class ProductMongoQueryableRepositoryTests : BaseMongoIntergrationTest
+    public class MongoQueryableRepositoryTests : BaseMongoIntergrationTest
     {
-        private IQueryableRepository<Product> _productRepository;
-        private MongoDatabase _database;
-        private string _collectionName;
         private MongoCollection<Product> _collection;
+        private string _collectionName;
+        private MongoDatabase _database;
+        private IQueryableRepository<Product> _productRepository;
 
         [SetUp]
         public void SetUp()
         {
             _productRepository = ContainerSpecification.Resolve<IQueryableRepository<Product>>();
             _database = ContainerSpecification.Resolve<MongoDatabase>();
-            _collectionName = typeof(Product).Name.ToLower();
+            _collectionName = typeof (Product).Name.ToLower();
 
             _collection = _database.GetCollection<Product>(_collectionName);
         }
