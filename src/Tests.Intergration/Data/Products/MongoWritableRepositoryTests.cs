@@ -21,7 +21,7 @@ namespace Tests.Intergration.Data.Products
         public void SetUp()
         {
             _product = new Product("Test", "A product created during an intergration test", 19.99);
-            _productRepository = ContainerSpecification.Resolve<IWritableRepository<Web.Domain.Product>>();
+            _productRepository = ContainerSpecification.Resolve<IWritableRepository<Product>>();
             _database = ContainerSpecification.Resolve<MongoDatabase>();
             _collectionName = typeof (Product).Name.ToLower();
 
