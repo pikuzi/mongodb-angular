@@ -3,6 +3,7 @@
     
     <head>
         <title>Angular Mongo</title>
+        <script src="assets/js/jquery-1.9.1.min.js"></script>
         <script src="assets/js/angular.js"></script>
         <script src="assets/js/bootstrap.js"></script>
         <script src="assets/application/app.js"></script>
@@ -24,7 +25,13 @@
                     <a class="brand" href="/">Mongo Angular</a>
                     <div class="nav-collapse collapse" id="main-menu">
                         <ul class="nav" id="main-menu-left">
-                            <li><a href="/#products">Products</a></li>
+                            <li class="dropdown" id="preview-menu">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/#products">View</a></li>
+                                    <li><a href="/#products/new">Create</a></li>
+                                </ul>
+                            </li>
                             <li><a href="/#orders">Orders</a></li>
                         </ul>
                     </div>
