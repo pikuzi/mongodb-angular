@@ -147,7 +147,12 @@
     <Content Include="assets\application\app.js" />
     <Content Include="assets\application\controllers\product-list-controller.js" />
     <Content Include="assets\application\views\products\product-list.html" />
+    <Content Include="assets\css\bootstrap-responsive.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\img\glyphicons-halflings-white.png" />
+    <Content Include="assets\img\glyphicons-halflings.png" />
     <Content Include="assets\js\angular.js" />
+    <Content Include="assets\js\bootstrap.js" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
@@ -160,8 +165,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\css\" />
-    <Folder Include="assets\img\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
