@@ -34,7 +34,7 @@
       <HintPath>..\packages\faker-csharp.1.1.0\lib\net4\Faker.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\Tests.Intergration\bin\Debug\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +52,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{86658279-DC54-4763-B711-46C46E626246}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Web\Web.csproj">
       <Project>{FE77E735-8F76-4CE5-BF4E-4AE1862524EE}</Project>
       <Name>Web</Name>

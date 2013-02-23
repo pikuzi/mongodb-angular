@@ -1,10 +1,10 @@
 using System.Linq;
+using Data.Extensions;
+using Data.Interface;
+using Domain;
 using Faker.Generators;
 using MongoDB.Driver;
 using NUnit.Framework;
-using Web.Data.Extensions;
-using Web.Data.Interface;
-using Web.Domain;
 
 namespace Tests.Intergration.Data.Products
 {

@@ -1,8 +1,8 @@
 using System.Linq;
+using Data.Interface;
+using Domain;
 using MongoDB.Driver;
 using NUnit.Framework;
-using Web.Data.Interface;
-using Web.Domain;
 
 namespace Tests.Intergration.Data.Products
 {

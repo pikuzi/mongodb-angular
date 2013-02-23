@@ -1,7 +1,7 @@
+using Data.Interface;
+using Domain;
 using MongoDB.Driver;
 using NUnit.Framework;
-using Web.Data.Interface;
-using Web.Domain;
 
 namespace Tests.Intergration.Data.Products
 {
@@ -16,7 +16,7 @@ namespace Tests.Intergration.Data.Products
         [SetUp]
         public void SetUp()
         {
-            _productRepository = ContainerSpecification.Resolve<IFindableRepository<Web.Domain.Product>>();
+            _productRepository = ContainerSpecification.Resolve<IFindableRepository<Product>>();
             _database = ContainerSpecification.Resolve<MongoDatabase>();
             _collectionName = typeof(Product).Name.ToLower();
 

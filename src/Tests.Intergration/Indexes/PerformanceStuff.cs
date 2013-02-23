@@ -4,13 +4,12 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 using Faker.Generators;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 using MongoDB.Driver.Linq;
 using NUnit.Framework;
-using Web.Data.Interface;
-using Web.Domain;
 using Web.Infrastructure.DataStore;
 
 namespace Tests.Intergration.Indexes
