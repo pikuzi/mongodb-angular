@@ -1,0 +1,38 @@
+﻿<div class="page-header">
+    <h3>Create a product</h3>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <form name="form" class="form-horizontal well" ng-submit="create(form)" novalidate>
+            <div class="control-group">
+                <label class="control-label" for="model.title">Title</label>
+                <div class="controls">
+                    <input type="text" class="input-xlarge" name="title" id="model.title" ng-model="model.title" required>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="model.description">Description</label>
+                <div class="controls">
+                    <textarea class="input-xlarge" name="description" id="model.description" ng-model="model.description" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="model.cost">Cost</label>
+                <div class="controls">
+                    <input type="text" name="cost" class="input-xlarge" id="model.cost" ng-model="model.cost" required>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+ <style type="text/css">
+      .controls input.ng-invalid.ng-dirty {
+        background-color: #FA787E;
+      }
+ </style>
+

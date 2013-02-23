@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\api\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,10 +146,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\application\app.js" />
-    <Content Include="assets\application\controllers\home-controller.js" />
-    <Content Include="assets\application\controllers\product-list-controller.js" />
+    <Content Include="assets\application\controllers\home\index-controller.js" />
+    <Content Include="assets\application\controllers\products\index-controller.js" />
+    <Content Include="assets\application\controllers\products\new-controller.js" />
     <Content Include="assets\application\views\home\index.html" />
-    <Content Include="assets\application\views\products\product-list.html" />
+    <Content Include="assets\application\views\products\index.html" />
+    <Content Include="assets\application\views\products\new.html" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\img\glyphicons-halflings-white.png" />
     <Content Include="assets\img\glyphicons-halflings.png" />
@@ -168,7 +171,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\application\models\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
